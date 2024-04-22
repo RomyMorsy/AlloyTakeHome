@@ -1,0 +1,99 @@
+/* Define color variables */
+:root {
+    /* Primary Colors */
+    --primary-blue: #007bff; /* Main blue color */
+    --accent-green: #28a745; /* Accent green color */
+    --accent-yellow: #ffc107; /* Accent yellow color */
+
+    /* Neutral Colors */
+    --white: #ffffff; /* White color */
+    --light-gray: #f8f9fa; /* Light gray color */
+    --dark-gray: #343a40; /* Dark gray color */
+}
+
+/* Apply styles to body */
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    font-family: Arial, sans-serif;
+}
+
+/* Apply styles to h1 */
+h1 {
+    color: var(--primary-blue);
+}
+
+/* Apply styles to Apply Now button */
+button.apply-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--accent-green); 
+    color: var(--white);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.apply-button:hover {
+    background-color: #218838; /* Darken the green color on hover */
+}
+
+/* Apply styles to Submit button */
+button.submit-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--primary-blue); /* Use your accent blue variable here */
+    color: var(--white);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-button:hover {
+    background-color: #0056b3; /* Darken the blue color on hover */
+}
+
+/* Apply styles to footer */
+footer {
+    position: fixed; /* Lock the footer to the bottom */
+    left: 0; /* Align it to the left */
+    bottom: 0; /* Align it to the bottom */
+    width: 100%; /* Full width */
+    background-color: var(--dark-gray); /* Dark gray background color */
+    color: var(--white); /* White text color */
+    padding: 5px; /* Add some padding */
+    text-align: center; /* Center-align text */
+}
+
+/* Apply styles to the form sections */
+.form-section {
+    margin-bottom: 20px;
+}
+
+/* Apply styles to input fields */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Apply styles to form error messages */
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+
+
+.terms-label {
+    display: flex;
+    align-items: center;
+  }

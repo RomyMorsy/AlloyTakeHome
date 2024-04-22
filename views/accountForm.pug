@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    title Account Opening - FinFirst
+    link(rel='stylesheet', href='styles.css')
+    style.
+      /* Sticky footer styles */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .wrapper {
+        min-height: 100%;
+        margin-bottom: -50px; /* Set equal to footer height */
+      }
+      .footer {
+        height: 50px; /* Height of the footer */
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        position: relative;
+      }
+      .terms-label {
+        display: inline-flex;
+        align-items: center;
+      }
+
+  body
+    .wrapper
+      form#accountForm(method="POST" action="/submit-account-form")
+        .form-section
+          h2 Personal Information
+          input(type="text", name="name_first", placeholder="First Name")
+          input(type="text", name="name_last", placeholder="Last Name")
+          input(type="text", name="address_line_1", placeholder="Address Line 1")
+          input(type="text", name="address_line_2", placeholder="Address Line 2")
+          input(type="text", name="address_city", placeholder="City")
+          input(type="text", name="address_state", placeholder="State (e.g., NY)")
+          input(type="text", name="address_postal_code", placeholder="ZIP")
+          input(type="text", name="address_country_code", placeholder="Country (e.g., US)")
+          input(type="text", name="document_ssn", placeholder="SSN")
+          input(type="email", name="email_address", placeholder="Email Address")
+          input(type="text", name="birth_date", placeholder="Date of Birth (YYYY-MM-DD)")
+
+        .form-section
+          h2 Terms and Conditions
+          label(for="agreeToTerms" class="terms-label")
+            | I agree to the terms and conditions
+            input(type="checkbox", id="agreeToTerms", name="agreeToTerms")
+
+        
+        button(type="submit" class="submit-button") Submit
+    .footer(style="text-align: center; padding: 20px; background-color: #333; color: #fff; position:fixed; bottom: 0; width:100%")
+     p © 2024 FinFirst. All rights reserved.
+
+  script.
+    document.getElementById('accountForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Retrieve form field values
+      var firstName = this.elements['name_first'].value;
+      var lastName = this.elements['name_last'].value;
+      var addressLine1 = this.elements['address_line_1'].value;
+      var addressLine2 = this.elements['address_line_2'].value;
+      var city = this.elements['address_city'].value;
+      var state = this.elements['address_state'].value;
+      var zip = this.elements['address_postal_code'].value;
+      var country = this.elements['address_country_code'].value;
+      var ssn = this.elements['document_ssn'].value;
+      var email = this.elements['email_address'].value;
+      var dob = this.elements['birth_date'].value;
+      var agreeToTerms = this.elements['agreeToTerms'].checked;
+
+      // Perform validation checks
+      var errors = [];
+      if (!/^[A-Z]{2}$/i.test(state)) {
+          errors.push("State must be a 2-letter code (e.g., NY)");
+      }
+      if (country.toUpperCase() !== 'US') {
+          errors.push("Country must be 'US'");
+      }
+      if (!/^\d{9}$/.test(ssn)) {
+          errors.push("SSN must be 9 digits");
+      }
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(dob)) {
+          errors.push("Date of Birth must be in ISO 8601 format (YYYY-MM-DD)");
+      }
+      if (!agreeToTerms) {
+          errors.push("Please agree to the terms and conditions");
+      }
+
+      // Display errors or submit the form
+      if (errors.length > 0) {
+          alert(errors.join('\n')); // Display all errors
+      } else {
+          this.submit(); // Submit the form
+      }
+    });

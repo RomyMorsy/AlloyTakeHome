@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title FinFirst - The First in Fin
+    link(rel='stylesheet', href='styles.css')
+  body
+    header(style="padding: 20px; text-align: center;")
+      h1(style="font-size: 24px; color: #333;") FinFirst
+    main
+      section#hero(style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: #f8f8f8; padding: 50px 0;")
+        h2(style="font-size: 32px; margin-bottom: 20px;") Welcome to FinFirst - the First in Fin
+        p(style="font-size: 18px; margin-bottom: 30px;") Your Financial Companion
+        form(action='/account-opening' method='get')
+          button(type='submit' class="submit-button") Apply Now!
+    .footer(style="text-align: center; padding: 20px; background-color: #333; color: #fff; position:fixed; bottom: 0; width:100%")
+      p © 2024 FinFirst. All rights reserved.

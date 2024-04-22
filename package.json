@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "api": "^6.1.1",
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pug": "^3.0.2",
+    "serve-favicon": "^2.5.0"
+  },
+  "name": "alloytakehome",
+  "version": "1.0.0",
+  "description": "Romy Alloy Take Home",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Romy Morsy",
+  "license": "ISC"
+}
