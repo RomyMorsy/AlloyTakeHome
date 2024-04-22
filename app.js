@@ -34,12 +34,3 @@ app.use('/', accountOpeningRouter);
 app.use('/', approvedRouter);
 app.use('/', deniedRouter);
 app.use('/', reviewRouter);
-
-
-
-//Start server
-const server = app.listen(0, () => {
-    const port = server.address().port;
-    console.log(`Server is running on port ${port}`);
-});
-
